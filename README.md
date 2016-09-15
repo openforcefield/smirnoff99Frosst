@@ -12,6 +12,22 @@ However, we are optimistic that it already rivals them in extensibility, and pot
 
 As with typical members of the AMBER force field family, smirf99Frosst is intended to be used with RESP or AM1-BCC charges which are not specified by the force field itself.
 
+**Differences from parm99 and parm@frosst**:
+
+smirff99Frosst is neither parm99 nor parm@frosst exactly, for a number of reasons including that:
+
+- It covers, or should cover with only slight modification, all reasonable organic chemistry, which neither of the above did
+- It is much simpler (because of parameter consolidation by SMIRKS, because of removing questionably differentiated parameters, and because its goal is to be a "good starting point" than a finished product)
+- It introduces a number of approximations/consolidations for conciseness/clarity
+- It fixes a number of mistakes/omissions, etc.
+
+The second and third bullet points are particularly important. 
+When many parameters (such as torsional barrier heights, or equlibrium angles) for similar chemical functionality differed only slightly in the existing force fields, these were often deliberately consolidated to have a single value. 
+
+The last bullet point is also noteworthy. 
+Because of limitations of atom typing, many torsions were missing in parm99/parm@frosst, resulting in generics being erroneously applied when a more specialized torsion could have served.
+The use of SMIRKS typically means that this is not the case, so many mistakes are eliminated.
+
 ## History
 
 This forcefield, smirff99Frosst, is a logical descendant of AMBER's parm99 forcefield as well as Merck-Frosst's [parm@frosst](http://www.ccl.net/cca/data/parm_at_Frosst/), but is generalized/simplified and put into the SMIRFF format. 
