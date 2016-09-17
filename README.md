@@ -2,6 +2,8 @@
 
 This provides the first general-purpose implementation of a Smirks Force Field (SMIRFF) as implemented by [SMARTY](https://github.com/open-forcefield-group/smarty) and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM.
 
+Latest release: [![DOI](https://zenodo.org/badge/68331217.svg)](https://zenodo.org/badge/latestdoi/68331217)
+
 ## What it is
 
 The provided smirff99Frosst.xml (forcefield) is a starting point for a general-purpose small molecule force field in the SMIRFF format; it should cover all or almost all of drug-like chemical space, and illustrates some of the major functionality of the SMIRFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
@@ -52,7 +54,7 @@ Specifically, the handling of improper torsions needs to be validated.
 Please see the smarty issue tracker for details.
 
 ## Versions
-
+- Version 1.0/(Version 1.0.1)[http://dx.doi.org/10.5281/zenodo.154235] (equivalent): Initial release after hand curation by C. I. Bayly and C. C. Bannan. DOI (10.5281/zenodo.154235)[http://dx.doi.org/10.5281/zenodo.154235]
 
 ## Contributors
 
