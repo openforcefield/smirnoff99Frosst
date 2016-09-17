@@ -54,7 +54,7 @@ Specifically, the handling of improper torsions needs to be validated.
 Please see the smarty issue tracker for details.
 
 ## Versions
-- Version 1.0/(Version 1.0.1)[http://dx.doi.org/10.5281/zenodo.154235] (equivalent): Initial release after hand curation by C. I. Bayly and C. C. Bannan. DOI (10.5281/zenodo.154235)[http://dx.doi.org/10.5281/zenodo.154235]
+- Version 1.0/[Version 1.0.1](http://dx.doi.org/10.5281/zenodo.154235) (equivalent): Initial release after hand curation by C. I. Bayly and C. C. Bannan. DOI [10.5281/zenodo.154235](http://dx.doi.org/10.5281/zenodo.154235)
 
 ## Contributors
 
