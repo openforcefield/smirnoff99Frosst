@@ -6,7 +6,7 @@ Latest release: [![DOI](https://zenodo.org/badge/68331217.svg)](https://zenodo.o
 
 ## What it is
 
-The provided smirff99Frosst.xml (forcefield) is a starting point for a general-purpose small molecule force field in the SMIRFF format; it should cover all or almost all of drug-like chemical space, and illustrates some of the major functionality of the SMIRFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
+The provided smirff99Frosst.xml (forcefield) is a starting point for a general-purpose small molecule force field in [the SMIRFF format](https://github.com/open-forcefield-group/smarty/blob/master/The-SMIRFF-force-field-format.md); it should cover all or almost all of drug-like chemical space, and illustrates some of the major functionality of the SMIRFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
 
 HOWEVER, this is not expected to be (at present) an especially accurate small molecule force field. 
 Its authors (see History, below) expect that while coverage will initially be good, additional refinements will be required (and possibly some expansion of the number of parameters) before it can rival current force fields such as GAFF or OPLS in accuracy. 
@@ -50,12 +50,12 @@ In OpenMM, application of smirff99Frosst to small molecules should be straightfo
 Additionally, with ParmEd, it should be possible to convert parameterized OpenMM systems into other formats such as AMBER, CHARMM, or GROMACS, making this forcefield available in a variety of packages.
 
 **However**, some development/testing remains to be done on `smarty.forcefield` before this should be applied widely. 
-Specifically, the handling of improper torsions needs to be validated. 
 Please see the smarty issue tracker for details.
 
 ## Versions
 - Version 1.0/[Version 1.0.1](http://dx.doi.org/10.5281/zenodo.154235) (equivalent): Initial release after hand curation by C. I. Bayly and C. C. Bannan. DOI [10.5281/zenodo.154235](http://dx.doi.org/10.5281/zenodo.154235)
 - [Version 1.0.2](http://doi.org/10.5281/zenodo.154555): Fixes an out-of-order generic (bond `[#6X2:1]-[#6:2]`) as per [Issue 4](https://github.com/open-forcefield-group/smirff99Frosst/issues/4).
+- Version 1.0.3: Bug fixes -- adding one omitted bond length, fixing four torsional smirks patterns, and adding one missing torsional term as detailed in [smarty issue 164](https://github.com/open-forcefield-group/smarty/pull/164)
 
 ## Contributors
 
