@@ -17,7 +17,7 @@ This provides the first general-purpose implementation of a Smirks Force Field (
 
 setup(
     name                 = 'smirff99frosst',
-    version              = '1.0.3',
+    version              = '1.0.4',
     description          = 'SMIRNOFF Forcefield parameters',
     long_description     = descr,
     url                  = 'https://github.com/open-forcefield-group/smirff99Frosst',
