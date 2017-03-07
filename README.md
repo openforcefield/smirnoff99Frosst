@@ -7,7 +7,7 @@ Latest release: [![DOI](https://zenodo.org/badge/68331217.svg)](https://zenodo.o
 
 ## Installation
 ```bash
-conda install -c mobleylab smirff99frosst=1.0.3
+conda install -c mobleylab smirff99frosst=1.0.4
 ```
 
 ## What it is
