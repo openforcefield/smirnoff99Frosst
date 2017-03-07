@@ -1,0 +1,21 @@
+package:
+  name: smirff99frosst
+  version: "1.0.3"
+
+source:
+    path: ../
+
+build:
+    noarch_python: True
+    script: python setup.py install
+
+requirements:
+    build:
+        - python
+        - setuptools
+    run:
+        - python
+about:
+  home: https://github.com/open-forcefield-group/smirff99Frosst
+  license: MIT
+  license_file: LICENSE
