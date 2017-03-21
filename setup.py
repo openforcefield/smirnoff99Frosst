@@ -17,7 +17,7 @@ This provides the first general-purpose implementation of a Smirks Force Field (
 
 setup(
     name                 = 'smirff99frosst',
-    version              = '1.0.4',
+    version              = '1.0.5',
     description          = 'SMIRNOFF Forcefield parameters',
     long_description     = descr,
     url                  = 'https://github.com/open-forcefield-group/smirff99Frosst',
@@ -26,6 +26,5 @@ setup(
     license              = 'MIT',
     platforms            = ['Linux-64', 'Mac OSX-64', 'Unix-64'],
     packages             = find_packages()+['smirff99frosst'],
-    include_package_data = True,
-    zip_safe             = False
+    include_package_data = True
 )
