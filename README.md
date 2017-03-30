@@ -1,14 +1,15 @@
-# smirff99Frosst
+# smirnoff99Frosst
 
-This provides the first general-purpose implementation of a Smirks Force Field (SMIRFF) as implemented by [SMARTY](https://github.com/open-forcefield-group/smarty) and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM.
+This provides the first general-purpose implementation of a Smirks Native Open Force Field (SMIRNOFF) as implemented by [SMARTY](https://github.com/open-forcefield-group/smarty) and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM.
 
 Latest release: [![DOI](https://zenodo.org/badge/68331217.svg)](https://zenodo.org/badge/latestdoi/68331217)
 
 
 ## Installation
 ```bash
-conda install -c mobleylab smirff99frosst=1.0.4
+conda install -c mobleylab smiff99frosst=1.0.4
 ```
+(smirnoff99frosst was formerly known as smirff99frosst)
 
 ## What it is
 
@@ -22,7 +23,7 @@ As with typical members of the AMBER force field family, smirf99Frosst is intend
 
 **Differences from parm99 and parm@frosst**:
 
-smirff99Frosst is neither parm99 nor parm@frosst exactly, for a number of reasons including that:
+smirnoff99Frosst/smirff99Frosst is neither parm99 nor parm@frosst exactly, for a number of reasons including that:
 
 - It covers, or should cover with only slight modification, all reasonable organic chemistry, which neither of the above did
 - It is much simpler (because of parameter consolidation by SMIRKS, because of removing questionably differentiated parameters, and because its goal is to be a "good starting point" than a finished product)
@@ -38,9 +39,9 @@ The use of SMIRKS typically means that this is not the case, so many mistakes ar
 
 ## History
 
-This forcefield, smirff99Frosst, is a logical descendant of AMBER's parm99 forcefield as well as Merck-Frosst's [parm@frosst](http://www.ccl.net/cca/data/parm_at_Frosst/), but is generalized/simplified and put into the SMIRFF format.
+This forcefield, smirnoff99Frosst/smirff99Frosst, is a logical descendant of AMBER's parm99 forcefield as well as Merck-Frosst's [parm@frosst](http://www.ccl.net/cca/data/parm_at_Frosst/), but is generalized/simplified and put into the SMIRFF format.
 
-smirff99Frosst was created by Christopher I. Bayly (with help from Caitlin C. Bannan and David L. Mobley, UC Irvine) during his sabbatical at UCI during Summer 2016.
+smirnoff99Frosst was created by Christopher I. Bayly (with help from Caitlin C. Bannan and David L. Mobley, UC Irvine) during his sabbatical at UCI during Summer 2016.
 It was created by hand curation of the original parm99 and parm@frosst parameter and frcmod files (manually creating SMIRKS patterns, condensing parameters, etc.).
 Usage of SMIRKS, along with application of Bayly's chemical intuition and extensive history with the AMBER force field family, allowed the number of parameter lines to be reduced from the multiple thousands of parm99+parm@frosst to the few hundred seen here.
 
