@@ -9,11 +9,11 @@ Latest release: [![DOI](https://zenodo.org/badge/68331217.svg)](https://zenodo.o
 ```bash
 conda install -c mobleylab smiff99frosst=1.0.4
 ```
-(smirnoff99frosst was formerly known as smirff99frosst)
+(smirnoff99frosst was formerly known as smirnoff99frosst)
 
 ## What it is
 
-The provided smirff99Frosst.xml (forcefield) is a starting point for a general-purpose small molecule force field in [the SMIRFF format](https://github.com/open-forcefield-group/smarty/blob/master/The-SMIRFF-force-field-format.md); it should cover all or almost all of drug-like chemical space, and illustrates some of the major functionality of the SMIRFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
+The provided smirnoff99Frosst.xml (forcefield) is a starting point for a general-purpose small molecule force field in [the SMIRNOFF format](https://github.com/open-forcefield-group/smarty/blob/master/The-SMIRNOFF-force-field-format.md); it should cover all or almost all of drug-like chemical space, and illustrates some of the major functionality of the SMIRNOFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
 
 HOWEVER, this is not expected to be (at present) an especially accurate small molecule force field.
 Its authors (see History, below) expect that while coverage will initially be good, additional refinements will be required (and possibly some expansion of the number of parameters) before it can rival current force fields such as GAFF or OPLS in accuracy.
@@ -23,7 +23,7 @@ As with typical members of the AMBER force field family, smirf99Frosst is intend
 
 **Differences from parm99 and parm@frosst**:
 
-smirnoff99Frosst/smirff99Frosst is neither parm99 nor parm@frosst exactly, for a number of reasons including that:
+smirnoff99Frosst/smirnoff99Frosst is neither parm99 nor parm@frosst exactly, for a number of reasons including that:
 
 - It covers, or should cover with only slight modification, all reasonable organic chemistry, which neither of the above did
 - It is much simpler (because of parameter consolidation by SMIRKS, because of removing questionably differentiated parameters, and because its goal is to be a "good starting point" than a finished product)
@@ -39,7 +39,7 @@ The use of SMIRKS typically means that this is not the case, so many mistakes ar
 
 ## History
 
-This forcefield, smirnoff99Frosst/smirff99Frosst, is a logical descendant of AMBER's parm99 forcefield as well as Merck-Frosst's [parm@frosst](http://www.ccl.net/cca/data/parm_at_Frosst/), but is generalized/simplified and put into the SMIRFF format.
+This forcefield, smirnoff99Frosst/smirnoff99Frosst, is a logical descendant of AMBER's parm99 forcefield as well as Merck-Frosst's [parm@frosst](http://www.ccl.net/cca/data/parm_at_Frosst/), but is generalized/simplified and put into the SMIRNOFF format.
 
 smirnoff99Frosst was created by Christopher I. Bayly (with help from Caitlin C. Bannan and David L. Mobley, UC Irvine) during his sabbatical at UCI during Summer 2016.
 It was created by hand curation of the original parm99 and parm@frosst parameter and frcmod files (manually creating SMIRKS patterns, condensing parameters, etc.).
@@ -51,9 +51,9 @@ We expect to continue to manually expand this to cover more chemical space and, 
 Subsequent versions are expected to build on Bayly's hand created version with some enhancements by Caitlin Bannan by improving specific parameters, further differentiating some chemical functionality, etc.
 However, derivatives are expected to retain this basic structure and the AMBER legacy/history; a full refitting of bonded parameters would result in a separate force field rather than a new version of this force field.
 
-## Using smirff99Frosst
+## Using smirnoff99Frosst
 
-In OpenMM, application of smirff99Frosst to small molecules should be straightforward via `smarty.forcefield`.
+In OpenMM, application of smirnoff99Frosst to small molecules should be straightforward via `smarty.forcefield`.
 Additionally, with ParmEd, it should be possible to convert parameterized OpenMM systems into other formats such as AMBER, CHARMM, or GROMACS, making this forcefield available in a variety of packages.
 
 **However**, some development/testing remains to be done on `smarty.forcefield` before this should be applied widely.
@@ -61,12 +61,12 @@ Please see the smarty issue tracker for details.
 
 ## Versions
 - Version 1.0/[Version 1.0.1](http://dx.doi.org/10.5281/zenodo.154235) (equivalent): Initial release after hand curation by C. I. Bayly and C. C. Bannan. DOI [10.5281/zenodo.154235](http://dx.doi.org/10.5281/zenodo.154235)
-- [Version 1.0.2](http://doi.org/10.5281/zenodo.154555): Fixes an out-of-order generic (bond `[#6X2:1]-[#6:2]`) as per [Issue 4](https://github.com/open-forcefield-group/smirff99Frosst/issues/4).
+- [Version 1.0.2](http://doi.org/10.5281/zenodo.154555): Fixes an out-of-order generic (bond `[#6X2:1]-[#6:2]`) as per [Issue 4](https://github.com/open-forcefield-group/smirnoff99Frosst/issues/4).
 - [Version 1.0.3](http://dx.doi.org/10.5281/zenodo.161616): Bug fixes -- adding one omitted bond length, fixing four torsional smirks patterns, and adding one missing torsional term as detailed in [smarty issue 164](https://github.com/open-forcefield-group/smarty/pull/164)
 - [Version 1.0.4](http://doi.org/10.5281/zenodo.348165): Bug fixes --  #11: Fix the parm@Frosst-derived C-OS bond length so it does not also match (and thus override) C-OH, switching from SMIRKS of `[#6X3:1](=[#8X1])-[#8X2:2]` to `[#6X3:1](=[#8X1])-[#8X2H0:2]`, which avoids overriding `[#6X3:1]-[#8X2H1:2]`. And then add back in a generic which should have been present (#15, fixing a bug introduced by #11)
 
 **Not yet in a version**:
-
+- Parameters were added and changes made so that the current version would cover an internal set of molecules from DrugBank with only non-metal atoms and less than 200 heavy atoms. Full documentation of changes is available [here](https://github.com/open-forcefield-group/smarty/pull/232). 
 ## Contributors
 
 Contributors to the relevant ffxml file include:
