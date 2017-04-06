@@ -1,13 +1,13 @@
 # smirnoff99Frosst
 
-This provides the first general-purpose implementation of a Smirks Native Open Force Field (SMIRNOFF) as implemented by [SMARTY](https://github.com/open-forcefield-group/smarty) and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM. (Note that this class is currently in the process of being migrated to [openforcefield](https://github.com/open-forcefield-group/openforcefield).)
+This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) as implemented by [SMARTY](https://github.com/open-forcefield-group/smarty) and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM. (Note that this class is currently in the process of being migrated to [openforcefield](https://github.com/open-forcefield-group/openforcefield).)
 
 Latest release: [![DOI](https://zenodo.org/badge/68331217.svg)](https://zenodo.org/badge/latestdoi/68331217)
 
 
 ## Installation
 ```bash
-conda install -c mobleylab smiff99frosst=1.0.5
+conda install -c mobleylab smirnoff99frosst=1.0.5
 ```
 (smirnoff99frosst was formerly known as smirnoff99frosst)
 
