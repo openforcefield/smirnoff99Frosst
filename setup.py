@@ -12,12 +12,12 @@ if sys.argv[-1] == 'setup.py':
     print()
 
 descr = """
-This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) as implemented by SMARTY and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM.
+This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) as implemented by SMARTY and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM. (Note that the forcefield class is being migrated to openforcefield rather than smarty.)
 """
 
 setup(
     name                 = 'smirnoff99frosst',
-    version              = '1.0.5',
+    version              = '1.0.6',
     description          = 'SMIRNOFF Forcefield parameters',
     long_description     = descr,
     url                  = 'https://github.com/open-forcefield-group/smirnoff99Frosst',
