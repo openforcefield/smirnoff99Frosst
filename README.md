@@ -1,13 +1,13 @@
 # smirnoff99Frosst
 
-This provides the first general-purpose implementation of a Smirks Native Open Force Field (SMIRNOFF) as implemented by [SMARTY](https://github.com/open-forcefield-group/smarty) and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM.
+This provides the first general-purpose implementation of a Smirks Native Open Force Field (SMIRNOFF) as implemented by [SMARTY](https://github.com/open-forcefield-group/smarty) and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM. (Note that this class is currently in the process of being migrated to [openforcefield](https://github.com/open-forcefield-group/openforcefield).)
 
 Latest release: [![DOI](https://zenodo.org/badge/68331217.svg)](https://zenodo.org/badge/latestdoi/68331217)
 
 
 ## Installation
 ```bash
-conda install -c mobleylab smiff99frosst=1.0.4
+conda install -c mobleylab smiff99frosst=1.0.5
 ```
 (smirnoff99frosst was formerly known as smirnoff99frosst)
 
@@ -19,11 +19,11 @@ HOWEVER, this is not expected to be (at present) an especially accurate small mo
 Its authors (see History, below) expect that while coverage will initially be good, additional refinements will be required (and possibly some expansion of the number of parameters) before it can rival current force fields such as GAFF or OPLS in accuracy.
 However, we are optimistic that it already rivals them in extensibility, and potentially with relatively minimal work can be extended to be a compelling present-day small molecule force field.
 
-As with typical members of the AMBER force field family, smirf99Frosst is intended to be used with RESP or AM1-BCC charges which are not specified by the force field itself.
+As with typical members of the AMBER force field family, smirnoff99Frosst is intended to be used with RESP or AM1-BCC charges which are not specified by the force field itself.
 
 **Differences from parm99 and parm@frosst**:
 
-smirnoff99Frosst/smirnoff99Frosst is neither parm99 nor parm@frosst exactly, for a number of reasons including that:
+smirnoff99Frosst is neither parm99 nor parm@frosst exactly, for a number of reasons including that:
 
 - It covers, or should cover with only slight modification, all reasonable organic chemistry, which neither of the above did
 - It is much simpler (because of parameter consolidation by SMIRKS, because of removing questionably differentiated parameters, and because its goal is to be a "good starting point" than a finished product)
@@ -39,7 +39,7 @@ The use of SMIRKS typically means that this is not the case, so many mistakes ar
 
 ## History
 
-This forcefield, smirnoff99Frosst/smirnoff99Frosst, is a logical descendant of AMBER's parm99 forcefield as well as Merck-Frosst's [parm@frosst](http://www.ccl.net/cca/data/parm_at_Frosst/), but is generalized/simplified and put into the SMIRNOFF format.
+This forcefield, smirnoff99Frosst, is a logical descendant of AMBER's parm99 forcefield as well as Merck-Frosst's [parm@frosst](http://www.ccl.net/cca/data/parm_at_Frosst/), but is generalized/simplified and put into the SMIRNOFF format.
 
 smirnoff99Frosst was created by Christopher I. Bayly (with help from Caitlin C. Bannan and David L. Mobley, UC Irvine) during his sabbatical at UCI during Summer 2016.
 It was created by hand curation of the original parm99 and parm@frosst parameter and frcmod files (manually creating SMIRKS patterns, condensing parameters, etc.).
@@ -64,9 +64,11 @@ Please see the smarty issue tracker for details.
 - [Version 1.0.2](http://doi.org/10.5281/zenodo.154555): Fixes an out-of-order generic (bond `[#6X2:1]-[#6:2]`) as per [Issue 4](https://github.com/open-forcefield-group/smirnoff99Frosst/issues/4).
 - [Version 1.0.3](http://dx.doi.org/10.5281/zenodo.161616): Bug fixes -- adding one omitted bond length, fixing four torsional smirks patterns, and adding one missing torsional term as detailed in [smarty issue 164](https://github.com/open-forcefield-group/smarty/pull/164)
 - [Version 1.0.4](http://doi.org/10.5281/zenodo.348165): Bug fixes --  #11: Fix the parm@Frosst-derived C-OS bond length so it does not also match (and thus override) C-OH, switching from SMIRKS of `[#6X3:1](=[#8X1])-[#8X2:2]` to `[#6X3:1](=[#8X1])-[#8X2H0:2]`, which avoids overriding `[#6X3:1]-[#8X2H1:2]`. And then add back in a generic which should have been present (#15, fixing a bug introduced by #11)
+- [Version 1.0.5](http://doi.org/10.5281/zenodo.495249): Substantially improved coverage of chemical space via more general generics as well as a variety of new parameters introduced via generalization/estimation from other force fields such as GAFF/GAFF2. This release, this version covers an internal set of molecules from DrugBank filtered to remove metal atoms and to contain only compounds with less than 200 heavy atoms. Full documentation of changes is available [here](https://github.com/open-forcefield-group/smarty/pull/232). 
 
 **Not yet in a version**:
-- Parameters were added and changes made so that the current version would cover an internal set of molecules from DrugBank with only non-metal atoms and less than 200 heavy atoms. Full documentation of changes is available [here](https://github.com/open-forcefield-group/smarty/pull/232). 
+
+
 ## Contributors
 
 Contributors to the relevant ffxml file include:
