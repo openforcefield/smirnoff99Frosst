@@ -9,7 +9,7 @@ Latest release: [![DOI](https://zenodo.org/badge/68331217.svg)](https://zenodo.o
 ```bash
 conda install -c mobleylab smirnoff99frosst=1.0.5
 ```
-(smirnoff99frosst was formerly known as smirnoff99frosst)
+(smirnoff99frosst was formerly known as smirff99frosst)
 
 ## What it is
 
