@@ -4,8 +4,17 @@ Setup script to install the smirnoff99Frosst.ffxml as a python package
 
 import sys,os
 from os.path import relpath, join
-
 from setuptools import setup, find_packages
+
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
+def find_package_data(data_root, package_root):
+    files = []
+    for root, dirnames, filenames in os.walk(data_root):
+        for fn in filenames:
+            files.append(relpath(join(root, fn), package_root))
+    return files
 
 if sys.argv[-1] == 'setup.py':
     print("To install, run 'python setup.py install'")
@@ -26,5 +35,6 @@ setup(
     license              = 'MIT',
     platforms            = ['Linux-64', 'Mac OSX-64', 'Unix-64'],
     packages             = find_packages()+['smirnoff99frosst'],
+    package_data = {'smirnoff99frosst':find_package_data('smirnoff99frosst/', 'smirnoff99fross')},
     include_package_data = True
 )
