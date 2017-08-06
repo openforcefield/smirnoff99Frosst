@@ -35,6 +35,6 @@ setup(
     license              = 'MIT',
     platforms            = ['Linux-64', 'Mac OSX-64', 'Unix-64'],
     packages             = find_packages()+['smirnoff99frosst'],
-    package_data = {'smirnoff99frosst':find_package_data('smirnoff99frosst/', 'smirnoff99fross')},
+    package_data = {'smirnoff99frosst':find_package_data('smirnoff99frosst/', 'smirnoff99frosst')},
     include_package_data = True
 )

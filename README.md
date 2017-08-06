@@ -67,7 +67,7 @@ Please see the smarty issue tracker for details.
 - [Version 1.0.5](http://doi.org/10.5281/zenodo.495249): Substantially improved coverage of chemical space via more general generics as well as a variety of new parameters introduced via generalization/estimation from other force fields such as GAFF/GAFF2. This release, this version covers an internal set of molecules from DrugBank filtered to remove metal atoms and to contain only compounds with less than 200 heavy atoms. Full documentation of changes is available [here](https://github.com/open-forcefield-group/smarty/pull/232). 
 
 **Not yet in a version**:
-
+- Add monovalent ion parameters (Joung/Cheatham) for TIP3P as default.
 
 ## Contributors
 
