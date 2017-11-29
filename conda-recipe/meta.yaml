@@ -1,6 +1,6 @@
 package:
   name: smirnoff99frosst
-  version: "1.0.5"
+  version: "1.0.6"
 
 source:
     path: ../
