@@ -19,6 +19,6 @@ requirements:
         - python
 
 about:
-  home: https://github.com/open-forcefield-group/smirnoff99Frosst
+  home: https://github.com/openforcefield/smirnoff99Frosst
   license: MIT
   license_file: LICENSE

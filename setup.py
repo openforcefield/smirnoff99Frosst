@@ -29,7 +29,7 @@ setup(
     version              = '1.0.6',
     description          = 'SMIRNOFF Forcefield parameters',
     long_description     = descr,
-    url                  = 'https://github.com/open-forcefield-group/smirnoff99Frosst',
+    url                  = 'https://github.com/openforcefield/smirnoff99Frosst',
     author               = 'Christopher I. Bayly, Caitlin C. Bannan, David L. Mobley',
     author_email         = 'dmobley@uci.edu',
     license              = 'MIT',
