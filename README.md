@@ -1,6 +1,6 @@
 # smirnoff99Frosst
 
-This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) as implemented by [SMARTY](https://github.com/open-forcefield-group/smarty) and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM. (Note that this class is currently in the process of being migrated to [openforcefield](https://github.com/open-forcefield-group/openforcefield).)
+This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) as implemented by [SMARTY](https://github.com/openforcefield/smarty) and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM. (Note that this class is currently in the process of being migrated to [openforcefield](https://github.com/openforcefield/openforcefield).)
 
 Latest release: [![DOI](https://zenodo.org/badge/68331217.svg)](https://zenodo.org/badge/latestdoi/68331217)
 
@@ -13,7 +13,7 @@ conda install -c mobleylab smirnoff99frosst=1.0.5
 
 ## What it is
 
-The provided smirnoff99Frosst.xml (forcefield) is a starting point for a general-purpose small molecule force field in [the SMIRNOFF format](https://github.com/open-forcefield-group/smarty/blob/master/The-SMIRNOFF-force-field-format.md); it should cover all or almost all of drug-like chemical space, and illustrates some of the major functionality of the SMIRNOFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
+The provided smirnoff99Frosst.xml (forcefield) is a starting point for a general-purpose small molecule force field in [the SMIRNOFF format](https://github.com/openforcefield/smarty/blob/master/The-SMIRNOFF-force-field-format.md); it should cover all or almost all of drug-like chemical space, and illustrates some of the major functionality of the SMIRNOFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
 
 HOWEVER, this is not expected to be (at present) an especially accurate small molecule force field.
 Its authors (see History, below) expect that while coverage will initially be good, additional refinements will be required (and possibly some expansion of the number of parameters) before it can rival current force fields such as GAFF or OPLS in accuracy.
@@ -61,13 +61,13 @@ Please see the smarty issue tracker for details.
 
 ## Versions
 - Version 1.0/[Version 1.0.1](http://dx.doi.org/10.5281/zenodo.154235) (equivalent): Initial release after hand curation by C. I. Bayly and C. C. Bannan. DOI [10.5281/zenodo.154235](http://dx.doi.org/10.5281/zenodo.154235)
-- [Version 1.0.2](http://doi.org/10.5281/zenodo.154555): Fixes an out-of-order generic (bond `[#6X2:1]-[#6:2]`) as per [Issue 4](https://github.com/open-forcefield-group/smirnoff99Frosst/issues/4).
-- [Version 1.0.3](http://dx.doi.org/10.5281/zenodo.161616): Bug fixes -- adding one omitted bond length, fixing four torsional smirks patterns, and adding one missing torsional term as detailed in [smarty issue 164](https://github.com/open-forcefield-group/smarty/pull/164)
+- [Version 1.0.2](http://doi.org/10.5281/zenodo.154555): Fixes an out-of-order generic (bond `[#6X2:1]-[#6:2]`) as per [Issue 4](https://github.com/openforcefield/smirnoff99Frosst/issues/4).
+- [Version 1.0.3](http://dx.doi.org/10.5281/zenodo.161616): Bug fixes -- adding one omitted bond length, fixing four torsional smirks patterns, and adding one missing torsional term as detailed in [smarty issue 164](https://github.com/openforcefield/smarty/pull/164)
 - [Version 1.0.4](http://doi.org/10.5281/zenodo.348165): Bug fixes --  #11: Fix the parm@Frosst-derived C-OS bond length so it does not also match (and thus override) C-OH, switching from SMIRKS of `[#6X3:1](=[#8X1])-[#8X2:2]` to `[#6X3:1](=[#8X1])-[#8X2H0:2]`, which avoids overriding `[#6X3:1]-[#8X2H1:2]`. And then add back in a generic which should have been present (#15, fixing a bug introduced by #11)
-- [Version 1.0.5](http://doi.org/10.5281/zenodo.495249): Substantially improved coverage of chemical space via more general generics as well as a variety of new parameters introduced via generalization/estimation from other force fields such as GAFF/GAFF2. This release, this version covers an internal set of molecules from DrugBank filtered to remove metal atoms and to contain only compounds with less than 200 heavy atoms. Full documentation of changes is available [here](https://github.com/open-forcefield-group/smarty/pull/232). 
+- [Version 1.0.5](http://doi.org/10.5281/zenodo.495249): Substantially improved coverage of chemical space via more general generics as well as a variety of new parameters introduced via generalization/estimation from other force fields such as GAFF/GAFF2. This release, this version covers an internal set of molecules from DrugBank filtered to remove metal atoms and to contain only compounds with less than 200 heavy atoms. Full documentation of changes is available [here](https://github.com/openforcefield/smarty/pull/232).
+- [Version 1.0.6](): Added monovalent ion parameters (Joung/Cheatham) for TIP3P as default. Added angle parameters for cyclobutyl groups. Replaced `R` decorators with `x` to gaurentee compatibility between OpenEye toolkits and RDKit SMIRKS parsing.
 
 **Not yet in a version**:
-- Add monovalent ion parameters (Joung/Cheatham) for TIP3P as default.
 
 ## Contributors
 
