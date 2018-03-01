@@ -1,5 +1,5 @@
 """
-Setup script to install the smirnoff99Frosst.ffxml as a python package
+Setup script to install the smirnoff99Frosst.offxml as a python package
 """
 
 import sys,os
@@ -26,7 +26,7 @@ This provides the first general-purpose implementation of a SMIRKS Native Open F
 
 setup(
     name                 = 'smirnoff99frosst',
-    version              = '1.0.6',
+    version              = '1.0.7',
     description          = 'SMIRNOFF Forcefield parameters',
     long_description     = descr,
     url                  = 'https://github.com/openforcefield/smirnoff99Frosst',
