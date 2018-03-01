@@ -1,5 +1,5 @@
 """
-Setup script to install the smirnoff99Frosst.ffxml as a python package
+Setup script to install the smirnoff99Frosst.offxml as a python package
 """
 
 import sys,os
