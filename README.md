@@ -68,6 +68,7 @@ Please see the smarty issue tracker for details.
 - [Version 1.0.6](https://doi.org/10.5281/zenodo.1093346): Added monovalent ion parameters (Joung/Cheatham) for TIP3P as default. Added angle parameters for cyclobutyl groups. Replaced `R` decorators with `x` to guarantee compatibility between OpenEye toolkits and RDKit SMIRKS parsing.
 
 **Not yet in a version**:
+- Add hydroxyl hydrogen radii (as per SMIRNOFF initial paper); remove generics with pure wildcards (not even elemental types).
 
 ## Contributors
 
@@ -76,4 +77,4 @@ Contributors to the relevant ffxml file include:
 - Caitlin C. Bannan (UC Irvine)
 - David L. Mobley (UC Irvine)
 
-Special thanks go to John D. Chodera (MSKCC) for his initial implementation of `smarty.forcefield`.
+Special thanks go to John D. Chodera (MSKCC) for his initial implementation of `smarty.forcefield`, which later migrated to `openforcefield` and the SMIRNOFF format.
