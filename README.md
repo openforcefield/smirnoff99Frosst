@@ -1,13 +1,16 @@
 # smirnoff99Frosst
 
-This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) as implemented by [SMARTY](https://github.com/openforcefield/smarty) and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM. (Note that this class is currently in the process of being migrated to [openforcefield](https://github.com/openforcefield/openforcefield).)
+This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) as implemented by
+the [openforcefield](https://github.com/openforcefield/openforcefield) toolkit and its
+its ForceField class for parameterizing small molecules for OpenMM.
+Details about this new format are documented in our recent preprint ([doi:10.1101/286542](https://doi.org/10.1101/286542)).
+Usage examples can be found in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
 
-Latest release: [![DOI](https://zenodo.org/badge/68331217.svg)](https://zenodo.org/badge/latestdoi/68331217)
-
+Latest release: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1186466.svg)](https://doi.org/10.5281/zenodo.1186466)
 
 ## Installation
 ```bash
-conda install -c mobleylab smirnoff99frosst=1.0.6
+conda install -c mobleylab smirnoff99frosst=1.0.7
 ```
 (smirnoff99frosst was formerly known as smirff99frosst)
 
@@ -53,11 +56,9 @@ However, derivatives are expected to retain this basic structure and the AMBER l
 
 ## Using smirnoff99Frosst
 
-In OpenMM, application of smirnoff99Frosst to small molecules should be straightforward via `smarty.forcefield`.
+In OpenMM, application of smirnoff99Frosst to small molecules should be straightforward via `openforcefield` with examples available in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples)
 Additionally, with ParmEd, it should be possible to convert parameterized OpenMM systems into other formats such as AMBER, CHARMM, or GROMACS, making this forcefield available in a variety of packages.
 
-**However**, some development/testing remains to be done on `smarty.forcefield` before this should be applied widely.
-Please see the smarty issue tracker for details.
 
 ## Versions
 - Version 1.0/[Version 1.0.1](http://dx.doi.org/10.5281/zenodo.154235) (equivalent): Initial release after hand curation by C. I. Bayly and C. C. Bannan. DOI [10.5281/zenodo.154235](http://dx.doi.org/10.5281/zenodo.154235)
@@ -69,7 +70,7 @@ Please see the smarty issue tracker for details.
 - [Version 1.0.7](https://dx.doi.org/10.5281/zenodo.1186466): Add hydroxyl hydrogen radii (as per SMIRNOFF initial paper); remove generics with pure wildcards (not even elemental types).
 
 **Not yet in a version**:
-
+- Fixed the bond parameter between hydrogen and divalent carbons as documented in [issue #81](https://github.com/openforcefield/smirnoff99Frosst/issues/81).
 
 ## Contributors
 
@@ -78,4 +79,4 @@ Contributors to the relevant .offxml file include:
 - Caitlin C. Bannan (UC Irvine)
 - David L. Mobley (UC Irvine)
 
-Special thanks go to John D. Chodera (MSKCC) for his initial implementation of `smarty.forcefield`, which later migrated to `openforcefield` and the SMIRNOFF format.
+Special thanks go to John D. Chodera (MSKCC) for his initial implementation of `openforcefield` toolkits and the SMIRNOFF format.
