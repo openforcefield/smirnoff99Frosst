@@ -1,9 +1,11 @@
 # smirnoff99Frosst
 
-This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) as implemented by
-the [openforcefield](https://github.com/openforcefield/openforcefield) toolkit and its
-its ForceField class for parameterizing small molecules for OpenMM.
-Details about this new format are documented in our recent preprint ([doi:10.1101/286542](https://doi.org/10.1101/286542)).
+This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) created by the
+[Open Force Field Initiative](https://openforcfield.org).
+You can parameterize small molecules with SMIRNOFF using the
+`ForceField` class in the [openforcefield toolkit](https://github.com/openforcefield/openforcefield)
+for simulations with [OpenMM](http://openmm.org/).
+Details about this new format are documented in our recent publication ([doi:10.1021/acs.jctc.8b00640](https://www.doi.org/10.1021/acs.jctc.8b00640) or [bioRxiv](https://doi.org/10.1101/286542)).
 Usage examples can be found in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
 
 Latest release: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1186466.svg)](https://doi.org/10.5281/zenodo.1186466)
