@@ -1,4 +1,4 @@
-# smirnoff99Frosst
+# SMIRNOFF99Frosst
 
 This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) created by the
 [Open Force Field Initiative](https://openforcefield.org).
@@ -14,7 +14,7 @@ Latest release: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1186466.svg)
 ```bash
 conda install -c mobleylab smirnoff99frosst=1.0.7
 ```
-(smirnoff99frosst was formerly known as smirff99frosst)
+(SMIRNOFF99frosst was formerly known as SMIRFF99frosst)
 
 ## What it is
 
@@ -24,11 +24,11 @@ HOWEVER, this is not expected to be (at present) an especially accurate small mo
 Its authors (see History, below) expect that while coverage will initially be good, additional refinements will be required (and possibly some expansion of the number of parameters) before it can rival current force fields such as GAFF or OPLS in accuracy.
 However, we are optimistic that it already rivals them in extensibility, and potentially with relatively minimal work can be extended to be a compelling present-day small molecule force field.
 
-As with typical members of the AMBER force field family, smirnoff99Frosst is intended to be used with RESP or AM1-BCC charges which are not specified by the force field itself.
+As with typical members of the AMBER force field family, SMIRNOFF99Frosst is intended to be used with RESP or AM1-BCC charges which are not specified by the force field itself.
 
 **Differences from parm99 and parm@frosst**:
 
-smirnoff99Frosst is neither parm99 nor parm@frosst exactly, for a number of reasons including that:
+SMIRNOFF99Frosst is neither parm99 nor parm@frosst exactly, for a number of reasons including that:
 
 - It covers, or should cover with only slight modification, all reasonable organic chemistry, which neither of the above did
 - It is much simpler (because of parameter consolidation by SMIRKS, because of removing questionably differentiated parameters, and because its goal is to be a "good starting point" than a finished product)
@@ -44,9 +44,9 @@ The use of SMIRKS typically means that this is not the case, so many mistakes ar
 
 ## History
 
-This forcefield, smirnoff99Frosst, is a logical descendant of AMBER's parm99 forcefield as well as Merck-Frosst's [parm@frosst](http://www.ccl.net/cca/data/parm_at_Frosst/), but is generalized/simplified and put into the SMIRNOFF format.
+This forcefield, SMIRNOFF99Frosst, is a logical descendant of AMBER's parm99 forcefield as well as Merck-Frosst's [parm@frosst](http://www.ccl.net/cca/data/parm_at_Frosst/), but is generalized/simplified and put into the SMIRNOFF format.
 
-smirnoff99Frosst was created by Christopher I. Bayly (with help from Caitlin C. Bannan and David L. Mobley, UC Irvine) during his sabbatical at UCI during Summer 2016.
+SMIRNOFF99Frosst was created by Christopher I. Bayly (with help from Caitlin C. Bannan and David L. Mobley, UC Irvine) during his sabbatical at UCI during Summer 2016.
 It was created by hand curation of the original parm99 and parm@frosst parameter and frcmod files (manually creating SMIRKS patterns, condensing parameters, etc.).
 Usage of SMIRKS, along with application of Bayly's chemical intuition and extensive history with the AMBER force field family, allowed the number of parameter lines to be reduced from the multiple thousands of parm99+parm@frosst to the few hundred seen here.
 
@@ -56,9 +56,9 @@ We expect to continue to manually expand this to cover more chemical space and, 
 Subsequent versions are expected to build on Bayly's hand created version with some enhancements by Caitlin Bannan by improving specific parameters, further differentiating some chemical functionality, etc.
 However, derivatives are expected to retain this basic structure and the AMBER legacy/history; a full refitting of bonded parameters would result in a separate force field rather than a new version of this force field.
 
-## Using smirnoff99Frosst
+## Using SMIRNOFF99Frosst
 
-In OpenMM, application of smirnoff99Frosst to small molecules should be straightforward via `openforcefield` with examples available in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
+In OpenMM, application of SMIRNOFF99Frosst to small molecules should be straightforward via `openforcefield` with examples available in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
 Additionally, with ParmEd, it should be possible to convert parameterized OpenMM systems into other formats such as AMBER, CHARMM, or GROMACS, making this forcefield available in a variety of packages.
 
 
