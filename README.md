@@ -1,7 +1,7 @@
 # smirnoff99Frosst
 
 This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) created by the
-[Open Force Field Initiative](https://openforcfield.org).
+[Open Force Field Initiative](https://openforcefield.org).
 You can parameterize small molecules with SMIRNOFF using the
 `ForceField` class in the [openforcefield toolkit](https://github.com/openforcefield/openforcefield)
 for simulations with [OpenMM](http://openmm.org/).
@@ -18,7 +18,7 @@ conda install -c mobleylab smirnoff99frosst=1.0.7
 
 ## What it is
 
-The provided smirnoff99Frosst.xml (forcefield) is a starting point for a general-purpose small molecule force field in [the SMIRNOFF format](https://github.com/openforcefield/smarty/blob/master/The-SMIRNOFF-force-field-format.md); it should cover all or almost all of drug-like chemical space, and illustrates some of the major functionality of the SMIRNOFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
+The provided smirnoff99Frosst.xml (forcefield) is a starting point for a general-purpose small molecule force field in [the SMIRNOFF format](https://github.com/openforcefield/openforcefield/blob/master/The-SMIRNOFF-force-field-format.md); it should cover all or almost all of drug-like chemical space, and illustrates some of the major functionality of the SMIRNOFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
 
 HOWEVER, this is not expected to be (at present) an especially accurate small molecule force field.
 Its authors (see History, below) expect that while coverage will initially be good, additional refinements will be required (and possibly some expansion of the number of parameters) before it can rival current force fields such as GAFF or OPLS in accuracy.
@@ -58,7 +58,7 @@ However, derivatives are expected to retain this basic structure and the AMBER l
 
 ## Using smirnoff99Frosst
 
-In OpenMM, application of smirnoff99Frosst to small molecules should be straightforward via `openforcefield` with examples available in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples)
+In OpenMM, application of smirnoff99Frosst to small molecules should be straightforward via `openforcefield` with examples available in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
 Additionally, with ParmEd, it should be possible to convert parameterized OpenMM systems into other formats such as AMBER, CHARMM, or GROMACS, making this forcefield available in a variety of packages.
 
 
@@ -66,13 +66,14 @@ Additionally, with ParmEd, it should be possible to convert parameterized OpenMM
 - Version 1.0/[Version 1.0.1](http://dx.doi.org/10.5281/zenodo.154235) (equivalent): Initial release after hand curation by C. I. Bayly and C. C. Bannan. DOI [10.5281/zenodo.154235](http://dx.doi.org/10.5281/zenodo.154235)
 - [Version 1.0.2](http://doi.org/10.5281/zenodo.154555): Fixes an out-of-order generic (bond `[#6X2:1]-[#6:2]`) as per [Issue 4](https://github.com/openforcefield/smirnoff99Frosst/issues/4).
 - [Version 1.0.3](http://dx.doi.org/10.5281/zenodo.161616): Bug fixes -- adding one omitted bond length, fixing four torsional smirks patterns, and adding one missing torsional term as detailed in [smarty issue 164](https://github.com/openforcefield/smarty/pull/164)
-- [Version 1.0.4](http://doi.org/10.5281/zenodo.348165): Bug fixes --  #11: Fix the parm@Frosst-derived C-OS bond length so it does not also match (and thus override) C-OH, switching from SMIRKS of `[#6X3:1](=[#8X1])-[#8X2:2]` to `[#6X3:1](=[#8X1])-[#8X2H0:2]`, which avoids overriding `[#6X3:1]-[#8X2H1:2]`. And then add back in a generic which should have been present (#15, fixing a bug introduced by #11)
+- [Version 1.0.4](http://doi.org/10.5281/zenodo.348165): Bug fixes --  #11: Fix the parm@Frosst-derived C-OS bond length so it does not also match (and thus override) C-OH, switching from SMIRKS of `[#6X3:1](=[#8X1])-[#8X2:2]` to `[#6X3:1](=[#8X1])-[#8X2H0:2]`, which avoids overriding `[#6X3:1]-[#8X2H1:2]`. And then add back in a generic which should have been present ([PR 15](https://github.com/openforcefield/smirnoff99Frosst/pull/15), fixing a bug introduced by [PR 11](https://github.com/openforcefield/smirnoff99Frosst/pull/11))
 - [Version 1.0.5](http://doi.org/10.5281/zenodo.495249): Substantially improved coverage of chemical space via more general generics as well as a variety of new parameters introduced via generalization/estimation from other force fields such as GAFF/GAFF2. This release, this version covers an internal set of molecules from DrugBank filtered to remove metal atoms and to contain only compounds with less than 200 heavy atoms. Full documentation of changes is available [here](https://github.com/openforcefield/smarty/pull/232).
 - [Version 1.0.6](https://doi.org/10.5281/zenodo.1093346): Added monovalent ion parameters (Joung/Cheatham) for TIP3P as default. Added angle parameters for cyclobutyl groups. Replaced `R` decorators with `x` to guarantee compatibility between OpenEye toolkits and RDKit SMIRKS parsing.
 - [Version 1.0.7](https://dx.doi.org/10.5281/zenodo.1186466): Add hydroxyl hydrogen radii (as per SMIRNOFF initial paper); remove generics with pure wildcards (not even elemental types).
 
 **Not yet in a version**:
 - Fixed the bond parameter between hydrogen and divalent carbons as documented in [issue #81](https://github.com/openforcefield/smirnoff99Frosst/issues/81).
+- Fixed the SMIRKS pattern for the angle parameter around trivalent carbon in 5-membered rings in [issue #84](https://github.com/openforcefield/smirnoff99Frosst/issues/84).
 
 ## Contributors
 
