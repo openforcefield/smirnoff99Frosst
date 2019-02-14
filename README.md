@@ -8,7 +8,7 @@ for simulations with [OpenMM](http://openmm.org/).
 Details about this new format are documented in our recent publication ([doi:10.1021/acs.jctc.8b00640](https://www.doi.org/10.1021/acs.jctc.8b00640) or [bioRxiv](https://doi.org/10.1101/286542)).
 Usage examples can be found in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
 
-Latest release: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1186466.svg)](https://doi.org/10.5281/zenodo.1186466)
+Latest release: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2565295.svg)](https://doi.org/10.5281/zenodo.2565295)
 
 ## Installation
 ```bash
