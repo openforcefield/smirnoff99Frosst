@@ -8,7 +8,7 @@ for simulations with [OpenMM](http://openmm.org/).
 Details about this new format are documented in our recent publication ([doi:10.1021/acs.jctc.8b00640](https://www.doi.org/10.1021/acs.jctc.8b00640) or [bioRxiv](https://doi.org/10.1101/286542)).
 Usage examples can be found in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
 
-Latest release: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1186466.svg)](https://doi.org/10.5281/zenodo.1186466)
+Latest release: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2565295.svg)](https://doi.org/10.5281/zenodo.2565295)
 
 ## Installation
 ```bash
@@ -70,10 +70,9 @@ Additionally, with ParmEd, it should be possible to convert parameterized OpenMM
 - [Version 1.0.5](http://doi.org/10.5281/zenodo.495249): Substantially improved coverage of chemical space via more general generics as well as a variety of new parameters introduced via generalization/estimation from other force fields such as GAFF/GAFF2. This release, this version covers an internal set of molecules from DrugBank filtered to remove metal atoms and to contain only compounds with less than 200 heavy atoms. Full documentation of changes is available [here](https://github.com/openforcefield/smarty/pull/232).
 - [Version 1.0.6](https://doi.org/10.5281/zenodo.1093346): Added monovalent ion parameters (Joung/Cheatham) for TIP3P as default. Added angle parameters for cyclobutyl groups. Replaced `R` decorators with `x` to guarantee compatibility between OpenEye toolkits and RDKit SMIRKS parsing.
 - [Version 1.0.7](https://dx.doi.org/10.5281/zenodo.1186466): Add hydroxyl hydrogen radii (as per SMIRNOFF initial paper); remove generics with pure wildcards (not even elemental types).
+- [Version 1.0.8](http://doi.org/10.5281/zenodo.2565295): Fix human error in hydroxyl hydrogens; fix bond parameters between hydrogen and divalent carbons ([issue #81](https://github.com/openforcefield/smirnoff99Frosst/issues/81)); and fixed SMIRKS patterns for angle parameters around trivalent carbon in 5-membered rings ([issue #84](https://github.com/openforcefield/smirnoff99Frosst/issues/84)).
 
 **Not yet in a version**:
-- Fixed the bond parameter between hydrogen and divalent carbons as documented in [issue #81](https://github.com/openforcefield/smirnoff99Frosst/issues/81).
-- Fixed the SMIRKS pattern for the angle parameter around trivalent carbon in 5-membered rings in [issue #84](https://github.com/openforcefield/smirnoff99Frosst/issues/84).
 
 ## Contributors
 
