@@ -1,40 +1,57 @@
 """
-Setup script to install the smirnoff99Frosst.offxml as a python package
+SMIRNOFF99Frosst
+A general small molecule forcefield descended from AMBER99 and parm@Frosst in the SMIRNOFF format.
 """
+import sys
+from setuptools import setup
+import versioneer
 
-import sys,os
-from os.path import relpath, join
-from setuptools import setup, find_packages
+short_description = __doc__.split("\n")
 
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+# from https://github.com/pytest-dev/pytest-runner#conditional-requirement
+needs_pytest = {'pytest', 'test', 'ptr'}.intersection(sys.argv)
+pytest_runner = ['pytest-runner'] if needs_pytest else []
 
-def find_package_data(data_root, package_root):
-    files = []
-    for root, dirnames, filenames in os.walk(data_root):
-        for fn in filenames:
-            files.append(relpath(join(root, fn), package_root))
-    return files
+try:
+    with open("README.md", "r") as handle:
+        long_description = handle.read()
+except:
+    long_description = "\n".join(short_description[2:]),
 
-if sys.argv[-1] == 'setup.py':
-    print("To install, run 'python setup.py install'")
-    print()
-
-descr = """
-This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) as implemented by SMARTY and its ForceField class (in smarty.forcefield) for parameterizing small molecules for OpenMM. (Note that the forcefield class is being migrated to openforcefield rather than smarty.)
-"""
 
 setup(
-    name                 = 'smirnoff99frosst',
-    version              = '1.0.7',
-    description          = 'SMIRNOFF Forcefield parameters',
-    long_description     = descr,
-    url                  = 'https://github.com/openforcefield/smirnoff99Frosst',
-    author               = 'Christopher I. Bayly, Caitlin C. Bannan, David L. Mobley',
-    author_email         = 'dmobley@uci.edu',
-    license              = 'MIT',
-    platforms            = ['Linux-64', 'Mac OSX-64', 'Unix-64'],
-    packages             = find_packages()+['smirnoff99frosst'],
-    package_data = {'smirnoff99frosst':find_package_data('smirnoff99frosst/', 'smirnoff99frosst')},
-    include_package_data = True
+    # Self-descriptive entries which should always be present
+    name='smirnoff99Frosst',
+    author='Christopher I. Bayly, Caitlin C. Bannan, David L. Mobley',
+    author_email='dmobley@uci.edu',
+    description=short_description[0],
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
+    license='MIT',
+
+    # Which Python importable modules should be included when your package is installed
+    packages=['smirnoff99Frosst', "smirnoff99Frosst.tests"],
+
+    # Optional include package data to ship with your package
+    # Comment out this line to prevent the files from being packaged with your software
+    # Extend/modify the list to include/exclude other items as need be
+    package_data={'smirnoff99Frosst': ["data/*.offxml"]
+                  },
+
+    # Allows `setup.py test` to work correctly with pytest
+    setup_requires=[] + pytest_runner,
+
+    # Additional entries you may want simply uncomment the lines you want and fill in the data
+    url='https://github.com/openforcefield/smirnoff99Frosst',  # Website
+    # install_requires=[],              # Required packages, pulls from pip if needed; do not use for Conda deployment
+    platforms=['Linux',
+               'Mac OS-X',
+               'Unix'],                 # Valid platforms your code works on, adjust to your flavor
+    # python_requires=">=3.5",          # Python version restrictions
+
+    # Manual control if final package is compressible or not, set False to prevent the .egg from being made
+    # zip_safe=False,
+
 )
