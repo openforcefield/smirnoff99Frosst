@@ -37,7 +37,7 @@ setup(
     # Optional include package data to ship with your package
     # Comment out this line to prevent the files from being packaged with your software
     # Extend/modify the list to include/exclude other items as need be
-    package_data={'smirnoff99Frosst': ["data/*.offxml"]
+    package_data={'smirnoff99Frosst': ["offxml/*"]
                   },
 
     # Allows `setup.py test` to work correctly with pytest
@@ -54,4 +54,10 @@ setup(
     # Manual control if final package is compressible or not, set False to prevent the .egg from being made
     # zip_safe=False,
 
+    # Add entry point so that the forcefield directory can be discovered by the openforcefield toolkit.
+    entry_points={
+        'openff.forcefielddirs' : [
+            'get_forcefield_dirs_paths = smirnoff99Frosst.smirnoff99frosst:get_forcefield_dirs_paths',
+        ],
+    }
 )
