@@ -4,7 +4,7 @@ A general small molecule forcefield descended from AMBER99 and parm@Frosst in th
 """
 
 # Add imports here
-from .smirnoff99frosst import get_forcefield_dir_paths
+from .smirnoff99frosst import get_forcefield_dirs_paths
 
 # Handle versioneer
 from ._version import get_versions
