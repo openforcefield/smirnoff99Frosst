@@ -56,7 +56,7 @@ setup(
 
     # Add entry point so that the forcefield directory can be discovered by the openforcefield toolkit.
     entry_points={
-        'openff.forcefielddirs' : [
+        'openforcefield.smirnoff_forcefield_directory' : [
             'get_forcefield_dirs_paths = smirnoff99Frosst.smirnoff99frosst:get_forcefield_dirs_paths',
         ],
     }
