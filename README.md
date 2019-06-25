@@ -82,3 +82,8 @@ Contributors to the relevant .offxml file include:
 - David L. Mobley (UC Irvine)
 
 Special thanks go to John D. Chodera (MSKCC) for his initial implementation of `openforcefield` toolkits and the SMIRNOFF format.
+
+#### Acknowledgements
+
+Project based on the
+[Computational Molecular Science Python Cookiecutter](https://github.com/molssi/cookiecutter-cms) version 1.0.
