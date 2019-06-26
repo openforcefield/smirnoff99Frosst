@@ -32,12 +32,12 @@ setup(
     license='CC-BY',
 
     # Which Python importable modules should be included when your package is installed
-    packages=['smirnoff99Frosst', "smirnoff99Frosst.tests"],
+    packages=['smirnoff99frosst', "smirnoff99frosst.tests"],
 
     # Optional include package data to ship with your package
     # Comment out this line to prevent the files from being packaged with your software
     # Extend/modify the list to include/exclude other items as need be
-    package_data={'smirnoff99Frosst': ["offxml/*"]
+    package_data={'smirnoff99frosst': ["offxml/*"]
                   },
 
     # Allows `setup.py test` to work correctly with pytest
