@@ -32,19 +32,19 @@ setup(
     license='CC-BY',
 
     # Which Python importable modules should be included when your package is installed
-    packages=['smirnoff99Frosst', "smirnoff99Frosst.tests"],
+    packages=['smirnoff99frosst', "smirnoff99frosst.tests"],
 
     # Optional include package data to ship with your package
     # Comment out this line to prevent the files from being packaged with your software
     # Extend/modify the list to include/exclude other items as need be
-    package_data={'smirnoff99Frosst': ["offxml/*"]
+    package_data={'smirnoff99frosst': ["offxml/*"]
                   },
 
     # Allows `setup.py test` to work correctly with pytest
     setup_requires=[] + pytest_runner,
 
     # Additional entries you may want simply uncomment the lines you want and fill in the data
-    url='https://github.com/openforcefield/smirnoff99Frosst',  # Website
+    url='https://github.com/openforcefield/smirnoff99frosst',  # Website
     # install_requires=[],              # Required packages, pulls from pip if needed; do not use for Conda deployment
     platforms=['Linux',
                'Mac OS-X',
@@ -57,7 +57,7 @@ setup(
     # Add entry point so that the forcefield directory can be discovered by the openforcefield toolkit.
     entry_points={
         'openforcefield.smirnoff_forcefield_directory' : [
-            'get_forcefield_dirs_paths = smirnoff99Frosst.smirnoff99frosst:get_forcefield_dirs_paths',
+            'get_forcefield_dirs_paths = smirnoff99frosst.smirnoff99frosst:get_forcefield_dirs_paths',
         ],
     }
 )
