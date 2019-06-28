@@ -21,7 +21,7 @@ except:
 
 setup(
     # Self-descriptive entries which should always be present
-    name='smirnoff99Frosst',
+    name='smirnoff99frosst',
     author='Christopher I. Bayly, Caitlin C. Bannan, David L. Mobley',
     author_email='dmobley@uci.edu',
     description=short_description[0],
