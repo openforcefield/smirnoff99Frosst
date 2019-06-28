@@ -9,6 +9,12 @@ import pytest
 
 from smirnoff99frosst import get_forcefield_dirs_paths
 
+try:
+    import openforcefield
+    has_off_toolkit = True
+except:
+    has_off_toolkit = False
+
 
 def find_all_offxml_files():
     """Return a list of the offxml files shipped with the package."""
@@ -23,9 +29,15 @@ def find_all_offxml_files():
 def test_smirnoff99Frosst_entrypoint(offxml_file_name):
     """Test that the openforcefield toolkit can find and parse the files."""
     import os
-    assert os.path.exists(offxml_file_name)
+    ff_found = False
+    for dir_path in get_forcefield_dirs_paths():
+        ff_path = os.path.join(dir_path, offxml_file_name)
+        if os.path.exists(ff_path):
+            ff_found = True
+            break
+    assert ff_found
 
-
+@pytest.mark.skipif(not(has_off_toolkit), reason="Test requires OFF toolkit")
 @pytest.mark.parametrize('offxml_file_name', find_all_offxml_files())
 def test_smirnoff99Frosst_data_is_loadable(offxml_file_name):
     """Test that the openforcefield toolkit can find and parse the files."""
