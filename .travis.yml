@@ -42,7 +42,7 @@ install:
 
 
 script:
-  - pytest -v smirnoff99Frosst/tests/
+  - pytest -v smirnoff99frosst/tests/
 
 notifications:
     email: false
