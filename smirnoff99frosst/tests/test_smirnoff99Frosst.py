@@ -7,7 +7,7 @@ import os
 
 import pytest
 
-from smirnoff99Frosst import get_forcefield_dirs_paths
+from smirnoff99frosst import get_forcefield_dirs_paths
 
 
 def find_all_offxml_files():

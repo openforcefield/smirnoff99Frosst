@@ -25,4 +25,4 @@ def get_forcefield_dirs_paths():
         The list of directory paths containing the SMIRNOFF files.
 
     """
-    return [resource_filename('smirnoff99Frosst', 'offxml')]
+    return [resource_filename('smirnoff99frosst', 'offxml')]
