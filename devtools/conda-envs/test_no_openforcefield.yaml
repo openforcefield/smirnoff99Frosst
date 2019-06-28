@@ -1,8 +1,7 @@
-name: openforcefield
+name: test
 
 channels:
   - conda-forge
-  - omnia
 
 dependencies:
     # Base depends
@@ -12,5 +11,3 @@ dependencies:
     # Testing
   - pytest
 
-    # Standard dependencies
-  - openforcefield
