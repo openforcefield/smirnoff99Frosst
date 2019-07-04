@@ -29,7 +29,7 @@ setup(
     long_description_content_type="text/markdown",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    license='CC-BY',
+    license='CC-BY-4.0',
 
     # Which Python importable modules should be included when your package is installed
     packages=['smirnoff99frosst', "smirnoff99frosst.tests"],
