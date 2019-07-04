@@ -1,5 +1,7 @@
 # SMIRNOFF99Frosst
 
+[![Build Status](https://travis-ci.org/openforcefield/smirnoff99Frosst.svg?branch=master)](https://travis-ci.org/openforcefield/smirnoff99Frosst)
+
 This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) created by the
 [Open Force Field Initiative](https://openforcefield.org).
 You can parameterize small molecules with SMIRNOFF using the
