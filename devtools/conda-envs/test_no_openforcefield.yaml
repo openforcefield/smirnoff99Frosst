@@ -1,4 +1,4 @@
-name: openforcefield
+name: no-openforcefield
 
 channels:
   - conda-forge
