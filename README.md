@@ -14,7 +14,6 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | 
 | -------- | --- |
-| smirnoff99Frosst-1.0.10.offxml | No DOI yet |
 | smirnoff99Frosst-1.0.9.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3256444.svg)](https://doi.org/10.5281/zenodo.3256444) |
 | smirnoff99Frosst-1.0.8.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2565295.svg)](https://doi.org/10.5281/zenodo.2565295) | 
 | smirnoff99Frosst-1.0.7.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1186466.svg)](https://doi.org/10.5281/zenodo.1186466) | 
@@ -107,11 +106,10 @@ Additionally, with ParmEd, it should be possible to convert parameterized OpenMM
 - [Version 1.0.8](http://doi.org/10.5281/zenodo.2565295): Fix human error in hydroxyl hydrogens; fix bond parameters between hydrogen and divalent carbons ([issue #81](https://github.com/openforcefield/smirnoff99Frosst/issues/81)); and fixed SMIRKS patterns for angle parameters around trivalent carbon in 5-membered rings ([issue #84](https://github.com/openforcefield/smirnoff99Frosst/issues/84)).
 - [Version 1.0.9](https://doi.org/10.5281/zenodo.3256444): Addresses [issue 89](https://github.com/openforcefield/smirnoff99Frosst/issues/89): Fixes torsion t56, where SMIRKS `[!1:1]-[#7X4,#7X3:2]-[#6X4;r3:3]-[*:4]` should be `[!#1:1]-[#7X4,#7X3:2]-[#6X4;r3:3]-[*:4]`. The first means "not an isotope with mass 1" (`!1`), but we intend for it to apply to all hydrogens, so it has been changed to `!#1`.
 **Not yet in a version**:
-- Version 1.0.10: Fixes some issues with FF hierarchy, SMIRKS patterns. Full details available in [openforcefield/openforcefield Issue 367](https://github.com/openforcefield/openforcefield/issues/367). 
 
-Contributors
+## Contributors
 
-Contributors to the relevant .offxml files include:
+Contributors to the relevant .offxml file include:
 - Christopher I. Bayly (OpenEye Software/UC Irvine)
 - Caitlin C. Bannan (UC Irvine)
 - David L. Mobley (UC Irvine)
