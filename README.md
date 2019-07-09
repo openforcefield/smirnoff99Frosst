@@ -32,6 +32,23 @@ conda install -c omnia smirnoff99frosst
 ```
 (SMIRNOFF99frosst was formerly known as SMIRFF99frosst)
 
+## Use
+
+Installing this package exposes an entry point that makes the `smirnoff99frosst/offxml` directory easily accessible by other packages in the same python installation. If the [Open Force Field toolkit](https://github.com/openforcefield/openforcefield) is installed, it will automatically detect and use this entry point:
+
+```
+>>> from openforcefield.typing.engines.smirnoff import ForceField
+>>> ff = ForceField('smirnoff99Frosst-1.0.9.offxml') 
+```
+
+Otherwise, the entry point can be accessed by querying the `openforcefield.smirnoff_forcefield_directory` entry point group.
+
+```
+>>> from pkg_resources import iter_entry_points
+>>> for entry_point in iter_entry_points(group='openforcefield.smirnoff_forcefield_directory'):
+...     print(entry_point.load()())
+```
+
 ## What it is
 
 The provided OFFXML (force field) files are successive versions of a general-purpose small molecule force field, written in [the SMIRNOFF format](https://github.com/openforcefield/openforcefield/blob/master/The-SMIRNOFF-force-field-format.md); this force field should cover all or almost all of drug-like chemical space, and illustrate some of the major functionality of the SMIRNOFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
