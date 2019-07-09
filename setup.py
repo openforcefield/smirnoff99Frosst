@@ -21,7 +21,7 @@ except:
 
 setup(
     # Self-descriptive entries which should always be present
-    name='smirnoff99Frosst',
+    name='smirnoff99frosst',
     author='Christopher I. Bayly, Caitlin C. Bannan, David L. Mobley',
     author_email='dmobley@uci.edu',
     description=short_description[0],
@@ -29,15 +29,15 @@ setup(
     long_description_content_type="text/markdown",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    license='MIT',
+    license='CC-BY-4.0',
 
     # Which Python importable modules should be included when your package is installed
-    packages=['smirnoff99Frosst', "smirnoff99Frosst.tests"],
+    packages=['smirnoff99frosst', "smirnoff99frosst.tests"],
 
     # Optional include package data to ship with your package
     # Comment out this line to prevent the files from being packaged with your software
     # Extend/modify the list to include/exclude other items as need be
-    package_data={'smirnoff99Frosst': ["offxml/*"]
+    package_data={'smirnoff99frosst': ["offxml/*"]
                   },
 
     # Allows `setup.py test` to work correctly with pytest
@@ -57,7 +57,7 @@ setup(
     # Add entry point so that the forcefield directory can be discovered by the openforcefield toolkit.
     entry_points={
         'openforcefield.smirnoff_forcefield_directory' : [
-            'get_forcefield_dirs_paths = smirnoff99Frosst.smirnoff99frosst:get_forcefield_dirs_paths',
+            'get_forcefield_dirs_paths = smirnoff99frosst.smirnoff99frosst:get_forcefield_dirs_paths',
         ],
     }
 )

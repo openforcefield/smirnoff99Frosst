@@ -1,5 +1,7 @@
 # SMIRNOFF99Frosst
 
+[![Build Status](https://travis-ci.org/openforcefield/smirnoff99Frosst.svg?branch=master)](https://travis-ci.org/openforcefield/smirnoff99Frosst)
+
 This provides the first general-purpose implementation of a SMIRKS Native Open Force Field (SMIRNOFF) created by the
 [Open Force Field Initiative](https://openforcefield.org).
 You can parameterize small molecules with SMIRNOFF using the
@@ -8,17 +10,48 @@ for simulations with [OpenMM](http://openmm.org/).
 Details about this new format are documented in our recent publication ([doi:10.1021/acs.jctc.8b00640](https://www.doi.org/10.1021/acs.jctc.8b00640) or [bioRxiv](https://doi.org/10.1101/286542)).
 Usage examples can be found in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
 
-Latest release: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2565295.svg)](https://doi.org/10.5281/zenodo.2565295)
+DOIs for each force field in this repository can be found in the following table:
+
+| Filename | DOI | 
+| -------- | --- |
+| smirnoff99Frosst-1.0.9.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3256444.svg)](https://doi.org/10.5281/zenodo.3256444) |
+| smirnoff99Frosst-1.0.8.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2565295.svg)](https://doi.org/10.5281/zenodo.2565295) | 
+| smirnoff99Frosst-1.0.7.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1186466.svg)](https://doi.org/10.5281/zenodo.1186466) | 
+| smirnoff99Frosst-1.0.6.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1093346.svg)](https://doi.org/10.5281/zenodo.1093346) | 
+| smirnoff99Frosst-1.0.5.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.495249.svg)](https://doi.org/10.5281/zenodo.495249) | 
+| smirnoff99Frosst-1.0.4.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.348165.svg)](https://doi.org/10.5281/zenodo.348165) | 
+| smirnoff99Frosst-1.0.3.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.161616.svg)](https://doi.org/10.5281/zenodo.161616) | 
+| smirnoff99Frosst-1.0.2.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.154555.svg)](https://doi.org/10.5281/zenodo.154555) |
+| smirnoff99Frosst-1.0.1.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.154235.svg)](https://doi.org/10.5281/zenodo.154235) | 
+| smirnoff99Frosst-1.0.0.offxml | Same as 1.0.1 |
+
 
 ## Installation
 ```bash
-conda install -c mobleylab smirnoff99frosst=1.0.7
+conda install -c omnia smirnoff99frosst
 ```
 (SMIRNOFF99frosst was formerly known as SMIRFF99frosst)
 
+## Use
+
+Installing this package exposes an entry point that makes the `smirnoff99frosst/offxml` directory easily accessible by other packages in the same python installation. If the [Open Force Field toolkit](https://github.com/openforcefield/openforcefield) is installed, it will automatically detect and use this entry point:
+
+```
+>>> from openforcefield.typing.engines.smirnoff import ForceField
+>>> ff = ForceField('smirnoff99Frosst-1.0.9.offxml') 
+```
+
+Otherwise, the entry point can be accessed by querying the `openforcefield.smirnoff_forcefield_directory` entry point group.
+
+```
+>>> from pkg_resources import iter_entry_points
+>>> for entry_point in iter_entry_points(group='openforcefield.smirnoff_forcefield_directory'):
+...     print(entry_point.load()())
+```
+
 ## What it is
 
-The provided smirnoff99Frosst.xml (forcefield) is a starting point for a general-purpose small molecule force field in [the SMIRNOFF format](https://github.com/openforcefield/openforcefield/blob/master/The-SMIRNOFF-force-field-format.md); it should cover all or almost all of drug-like chemical space, and illustrates some of the major functionality of the SMIRNOFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
+The provided OFFXML (force field) files are successive versions of a general-purpose small molecule force field, written in [the SMIRNOFF format](https://github.com/openforcefield/openforcefield/blob/master/The-SMIRNOFF-force-field-format.md); this force field should cover all or almost all of drug-like chemical space, and illustrate some of the major functionality of the SMIRNOFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
 
 HOWEVER, this is not expected to be (at present) an especially accurate small molecule force field.
 Its authors (see History, below) expect that while coverage will initially be good, additional refinements will be required (and possibly some expansion of the number of parameters) before it can rival current force fields such as GAFF or OPLS in accuracy.
@@ -71,7 +104,7 @@ Additionally, with ParmEd, it should be possible to convert parameterized OpenMM
 - [Version 1.0.6](https://doi.org/10.5281/zenodo.1093346): Added monovalent ion parameters (Joung/Cheatham) for TIP3P as default. Added angle parameters for cyclobutyl groups. Replaced `R` decorators with `x` to guarantee compatibility between OpenEye toolkits and RDKit SMIRKS parsing.
 - [Version 1.0.7](https://dx.doi.org/10.5281/zenodo.1186466): Add hydroxyl hydrogen radii (as per SMIRNOFF initial paper); remove generics with pure wildcards (not even elemental types).
 - [Version 1.0.8](http://doi.org/10.5281/zenodo.2565295): Fix human error in hydroxyl hydrogens; fix bond parameters between hydrogen and divalent carbons ([issue #81](https://github.com/openforcefield/smirnoff99Frosst/issues/81)); and fixed SMIRKS patterns for angle parameters around trivalent carbon in 5-membered rings ([issue #84](https://github.com/openforcefield/smirnoff99Frosst/issues/84)).
-
+- [Version 1.0.9](https://doi.org/10.5281/zenodo.3256444): Addresses [issue 89](https://github.com/openforcefield/smirnoff99Frosst/issues/89): Fixes torsion t56, where SMIRKS `[!1:1]-[#7X4,#7X3:2]-[#6X4;r3:3]-[*:4]` should be `[!#1:1]-[#7X4,#7X3:2]-[#6X4;r3:3]-[*:4]`. The first means "not an isotope with mass 1" (`!1`), but we intend for it to apply to all hydrogens, so it has been changed to `!#1`.
 **Not yet in a version**:
 
 ## Contributors
