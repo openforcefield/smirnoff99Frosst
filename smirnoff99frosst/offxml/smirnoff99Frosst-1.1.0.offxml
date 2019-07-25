@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SMIRNOFF version="0.3" aromaticity_model="OEAroModel_MDL">
-    <!-- SMIRNOFF file implementing hydrogen bond constraint. -->
+    <Author>C. I. Bayly, OpenEye/UC Irvine; C. C. Bannan, UC Irvine; D. L. Mobley, UC Irvine; J. R. Wagner, Open Force Field/UC Irvine</Author>
+    <Date>Date: July 25, 2019</Date>
     <Constraints version="0.3">
       <!-- constrain all bonds to hydrogen to their equilibrium bond length -->
       <Constraint smirks="[#1:1]-[*:2]" id="c1"/>
     </Constraints>
+    <!-- This file is meant for processing via openforcefield.typing.engines.smirnoff -->
+    <!-- WARNING: AMBER functional forms drop the factor of 2 in the bond energy term, so cross-comparing this file with a corresponding .frcmod file, it will appear that the values here are twice as large as they should be. -->
 	<Bonds version="0.3" potential="harmonic" fractional_bondorder_method="None" fractional_bondorder_interpolation="linear">
 		<Bond smirks="[#6X4:1]-[#6X4:2]" length="1.526 * angstrom" k="620.0 * angstrom**-2 * mole**-1 * kilocalorie" id="b1"></Bond>
 		<Bond smirks="[#6X4:1]-[#6X3:2]" length="1.51 * angstrom" k="634.0 * angstrom**-2 * mole**-1 * kilocalorie" id="b2"></Bond>
@@ -93,6 +96,7 @@
 		<Bond smirks="[#7:1]-[#1:2]" length="1.01 * angstrom" k="868.0 * angstrom**-2 * mole**-1 * kilocalorie" id="b86"></Bond>
 		<Bond smirks="[#8:1]-[#1:2]" length="0.96 * angstrom" k="1106.0 * angstrom**-2 * mole**-1 * kilocalorie" id="b87"></Bond>
 	</Bonds>
+    <!-- WARNING: AMBER functional forms drop the factor of 2 in the angle energy term, so cross-comparing this file with a corresponding .frcmod file, it will appear that the values here are twice as large as they should be. -->
 	<Angles version="0.3" potential="harmonic">
 		<Angle smirks="[*:1]~[#6X4:2]-[*:3]" angle="109.5 * degree" k="100.0 * mole**-1 * radian**-2 * kilocalorie" id="a1"></Angle>
 		<Angle smirks="[#1:1]-[#6X4:2]-[#1:3]" angle="109.5 * degree" k="70.0 * mole**-1 * radian**-2 * kilocalorie" id="a2"></Angle>
@@ -297,6 +301,7 @@
 		<Improper smirks="[*:1]~[#7X3$(*~[#6X3]):2](~[*:3])~[*:4]" periodicity1="2" phase1="180.0 * degree" k1="1.0 * mole**-1 * kilocalorie" id="i3"></Improper>
 		<Improper smirks="[*:1]~[#6X3:2](=[#7X2,#7X3+1:3])~[#7:4]" periodicity1="2" phase1="180.0 * degree" k1="10.5 * mole**-1 * kilocalorie" id="i4"></Improper>
 	</ImproperTorsions>
+    <!-- WARNING: AMBER formats typically use r_0/2=r_min/2 to describe the relevant distance parameter, where r0 = 2^(1/6)*sigma. The difference is important, and the two conventions can be used here by specifying sigma or rmin_half. -->
 	<vdW version="0.3" potential="Lennard-Jones-12-6" combining_rules="Lorentz-Berthelot" scale12="0.0" scale13="0.0" scale14="0.5" scale15="1.0" switch_width="1.0 * angstrom" cutoff="9.0 * angstrom" method="cutoff">
 		<Atom smirks="[#1:1]" epsilon="0.0157 * mole**-1 * kilocalorie" id="n1" rmin_half="0.6 * angstrom"></Atom>
 		<Atom smirks="[#1:1]-[#6X4]" epsilon="0.0157 * mole**-1 * kilocalorie" id="n2" rmin_half="1.487 * angstrom"></Atom>
