@@ -14,7 +14,7 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | 
 | -------- | --- |
-| smirnoff99Frosst-1.1.0.offxml | No DOI yet | 
+| smirnoff99Frosst-1.1.0.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3351714.svg)](https://doi.org/10.5281/zenodo.3351714) | 
 | smirnoff99Frosst-1.0.9.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3256444.svg)](https://doi.org/10.5281/zenodo.3256444) |
 | smirnoff99Frosst-1.0.8.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2565295.svg)](https://doi.org/10.5281/zenodo.2565295) | 
 | smirnoff99Frosst-1.0.7.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1186466.svg)](https://doi.org/10.5281/zenodo.1186466) | 
@@ -119,7 +119,7 @@ Additionally, with ParmEd, it should be possible to convert parameterized OpenMM
 - [Version 1.0.7](https://dx.doi.org/10.5281/zenodo.1186466): Add hydroxyl hydrogen radii (as per SMIRNOFF initial paper); remove generics with pure wildcards (not even elemental types).
 - [Version 1.0.8](http://doi.org/10.5281/zenodo.2565295): Fix human error in hydroxyl hydrogens; fix bond parameters between hydrogen and divalent carbons ([issue #81](https://github.com/openforcefield/smirnoff99Frosst/issues/81)); and fixed SMIRKS patterns for angle parameters around trivalent carbon in 5-membered rings ([issue #84](https://github.com/openforcefield/smirnoff99Frosst/issues/84)).
 - [Version 1.0.9](https://doi.org/10.5281/zenodo.3256444): Addresses [issue 89](https://github.com/openforcefield/smirnoff99Frosst/issues/89): Fixes torsion t56, where SMIRKS `[!1:1]-[#7X4,#7X3:2]-[#6X4;r3:3]-[*:4]` should be `[!#1:1]-[#7X4,#7X3:2]-[#6X4;r3:3]-[*:4]`. The first means "not an isotope with mass 1" (`!1`), but we intend for it to apply to all hydrogens, so it has been changed to `!#1`.
-- Version 1.1.0: Adds hydrogen bond constraints. Updates contents to SMIRNOFF 0.3 spec (spec change performed by OFF toolkit 0.4.0 reading smirnoff99Frosst-1.0.9, and then writing the `ForceField` object out in the 0.3 spec). Fixes several issues with FF hierarchy, SMIRKS patterns. This fixes some issues with coverage of certain areas of chemical space, and parameters which could never be utilized due to hierarchy issues. Full details available in [openforcefield/openforcefield Issue 367](https://github.com/openforcefield/openforcefield/issues/367). 
+- [Version 1.1.0](https://doi.org/10.5281/zenodo.3351714): Adds hydrogen bond constraints. Updates contents to SMIRNOFF 0.3 spec (spec change performed by OFF toolkit 0.4.0 reading smirnoff99Frosst-1.0.9, and then writing the `ForceField` object out in the 0.3 spec). Fixes several issues with FF hierarchy, SMIRKS patterns. This fixes some issues with coverage of certain areas of chemical space, and parameters which could never be utilized due to hierarchy issues. Full details available in [openforcefield/openforcefield Issue 367](https://github.com/openforcefield/openforcefield/issues/367). 
 
 ## Contributors
 
