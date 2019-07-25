@@ -14,6 +14,7 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | 
 | -------- | --- |
+| smirnoff99Frosst-1.1.0.offxml | No DOI yet | 
 | smirnoff99Frosst-1.0.9.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3256444.svg)](https://doi.org/10.5281/zenodo.3256444) |
 | smirnoff99Frosst-1.0.8.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2565295.svg)](https://doi.org/10.5281/zenodo.2565295) | 
 | smirnoff99Frosst-1.0.7.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1186466.svg)](https://doi.org/10.5281/zenodo.1186466) | 
@@ -89,6 +90,19 @@ We expect to continue to manually expand this to cover more chemical space and, 
 Subsequent versions are expected to build on Bayly's hand created version with some enhancements by Caitlin Bannan by improving specific parameters, further differentiating some chemical functionality, etc.
 However, derivatives are expected to retain this basic structure and the AMBER legacy/history; a full refitting of bonded parameters would result in a separate force field rather than a new version of this force field.
 
+In general, this repository will only contain force fields that aim to reproduce the behavior of parm99/parm@Frosst using the SMIRNOFF format. 
+Once the Open Force Field Initiative begins parameter optimizations, the resulting force field should be migrated to separate base name.
+
+## General versioning guidelines
+
+_Applicable in general to SMIRNOFF-format FFs produced by the Open Force Field Consortium_
+
+Force fields moving forward will be called `name-X.Y.Z`
+
+* `X` denotes some major change in functional form.
+* `Y` is the parameterization epoch / generation, or a minor change that can affect energy.
+* `Z` is a bugfix version -- e.g. something we've caught and corrected.  
+
 ## Using SMIRNOFF99Frosst
 
 In OpenMM, application of SMIRNOFF99Frosst to small molecules should be straightforward via `openforcefield` with examples available in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
@@ -105,16 +119,18 @@ Additionally, with ParmEd, it should be possible to convert parameterized OpenMM
 - [Version 1.0.7](https://dx.doi.org/10.5281/zenodo.1186466): Add hydroxyl hydrogen radii (as per SMIRNOFF initial paper); remove generics with pure wildcards (not even elemental types).
 - [Version 1.0.8](http://doi.org/10.5281/zenodo.2565295): Fix human error in hydroxyl hydrogens; fix bond parameters between hydrogen and divalent carbons ([issue #81](https://github.com/openforcefield/smirnoff99Frosst/issues/81)); and fixed SMIRKS patterns for angle parameters around trivalent carbon in 5-membered rings ([issue #84](https://github.com/openforcefield/smirnoff99Frosst/issues/84)).
 - [Version 1.0.9](https://doi.org/10.5281/zenodo.3256444): Addresses [issue 89](https://github.com/openforcefield/smirnoff99Frosst/issues/89): Fixes torsion t56, where SMIRKS `[!1:1]-[#7X4,#7X3:2]-[#6X4;r3:3]-[*:4]` should be `[!#1:1]-[#7X4,#7X3:2]-[#6X4;r3:3]-[*:4]`. The first means "not an isotope with mass 1" (`!1`), but we intend for it to apply to all hydrogens, so it has been changed to `!#1`.
-**Not yet in a version**:
+- Version 1.1.0: Adds hydrogen bond constraints. Updates contents to SMIRNOFF 0.3 spec (spec change performed by OFF toolkit 0.4.0 reading smirnoff99Frosst-1.0.9, and then writing the `ForceField` object out in the 0.3 spec). Fixes several issues with FF hierarchy, SMIRKS patterns. This fixes some issues with coverage of certain areas of chemical space, and parameters which could never be utilized due to hierarchy issues. Full details available in [openforcefield/openforcefield Issue 367](https://github.com/openforcefield/openforcefield/issues/367). 
 
 ## Contributors
 
-Contributors to the relevant .offxml file include:
+Contributors to the relevant .offxml files include:
 - Christopher I. Bayly (OpenEye Software/UC Irvine)
 - Caitlin C. Bannan (UC Irvine)
 - David L. Mobley (UC Irvine)
 
 Special thanks go to John D. Chodera (MSKCC) for his initial implementation of `openforcefield` toolkits and the SMIRNOFF format.
+
+Andrea Rizzi (MSKCC) and Jeff Wagner (OFF/UC Irvine) contributed to the Python and Conda infrastructure of this package.
 
 #### Acknowledgements
 
