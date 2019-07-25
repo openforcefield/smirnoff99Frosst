@@ -3,8 +3,8 @@
     <Author>C. I. Bayly, OpenEye/UC Irvine; C. C. Bannan, UC Irvine; D. L. Mobley, UC Irvine; J. R. Wagner, Open Force Field/UC Irvine</Author>
     <Date>Date: July 25, 2019</Date>
     <Constraints version="0.3">
-      <!-- constrain all bonds to hydrogen to their equilibrium bond length -->
-      <Constraint smirks="[#1:1]-[*:2]" id="c1"/>
+        <!-- constrain all bonds to hydrogen to their equilibrium bond length -->
+        <Constraint smirks="[#1:1]-[*:2]" id="c1"/>
     </Constraints>
     <!-- This file is meant for processing via openforcefield.typing.engines.smirnoff -->
     <!-- WARNING: AMBER functional forms drop the factor of 2 in the bond energy term, so cross-comparing this file with a corresponding .frcmod file, it will appear that the values here are twice as large as they should be. -->
