@@ -44,3 +44,11 @@ def test_smirnoff99Frosst_data_is_loadable(offxml_file_name):
     from openforcefield.typing.engines.smirnoff import ForceField
     ForceField(offxml_file_name)
 
+@pytest.mark.skipif(not(has_off_toolkit), reason="Test requires OFF toolkit")
+def test_smirnoff99Frosst_data_is_not_loadable():
+    """Test that the openforcefield toolkit does raise an Exception if
+    a nonexistent FF isn't found."""
+    from openforcefield.typing.engines.smirnoff import ForceField
+    with pytest.raises(TypeError) as excinfo:
+        ForceField('smirnoff99Frosst-9.9.9.offxml')
+
