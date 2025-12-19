@@ -29,7 +29,7 @@ DOIs for each force field in this repository can be found in the following table
 
 ## Installation
 ```bash
-conda install -c omnia smirnoff99frosst
+conda install -c conda-forge smirnoff99frosst
 ```
 (SMIRNOFF99frosst was formerly known as SMIRFF99frosst)
 
