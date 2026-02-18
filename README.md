@@ -1,3 +1,7 @@
+## Note: This repo is a historical artifact and is no longer maintained
+
+The OFFXML files here will remain unchanged and available on GitHub, but we don't commit to continued updates of this python code or packaging.
+
 # SMIRNOFF99Frosst
 
 [![Build Status](https://travis-ci.org/openforcefield/smirnoff99Frosst.svg?branch=master)](https://travis-ci.org/openforcefield/smirnoff99Frosst)
